@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Flight Delay Prediction</h2>
+<form id="predictionForm" class="row g-3">
+  <div class="col-md-4">
+    <label for="month" class="form-label">Month</label>
+    <input type="number" class="form-control" id="month" name="month" min="1" max="12" required>
+  </div>
+  <div class="col-md-4">
+    <label for="day_of_week" class="form-label">Day of Week</label>
+    <input type="number" class="form-control" id="day_of_week" name="day_of_week" min="1" max="7" required>
+  </div>
+  <div class="col-md-4">
+    <label for="airline" class="form-label">Airline Code</label>
+    <input type="text" class="form-control" id="airline" name="airline" maxlength="2" required>
+  </div>
+  <div class="col-md-6">
+    <label for="origin" class="form-label">Origin Airport</label>
+    <input type="text" class="form-control" id="origin" name="origin" maxlength="3" required>
+  </div>
+  <div class="col-md-6">
+    <label for="destination" class="form-label">Destination Airport</label>
+    <input type="text" class="form-control" id="destination" name="destination" maxlength="3" required>
+  </div>
+  <div class="col-md-6">
+    <label for="scheduled_departure" class="form-label">Scheduled Departure (HHMM)</label>
+    <input type="number" class="form-control" id="scheduled_departure" name="scheduled_departure" min="0" max="2359" required>
+  </div>
+  <div class="col-md-6">
+    <label for="distance" class="form-label">Distance (miles)</label>
+    <input type="number" class="form-control" id="distance" name="distance" min="1" required>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Predict Delay</button>
+  </div>
+</form>
+<div id="predictionResult" class="alert alert-info mt-4" style="display: none;">
+  <h4>Prediction Result</h4>
+  <p><strong>Status:</strong> <span id="status"></span></p>
+  <p><strong>Probability of Delay:</strong> <span id="probability"></span></p>
+</div>
+<script>
+  document.getElementById('predictionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch('/predict', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert('Error: ' + data.error);
+      } else {
+        document.getElementById('status').textContent = data.status;
+        document.getElementById('probability').textContent = data.probability;
+        document.getElementById('predictionResult').style.display = 'block';
+      }
+    })
+    .catch(error => {
+      alert('Error: ' + error);
+    });
+  });
+</script>
+{% endblock %} 

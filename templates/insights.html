@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Insights</h2>
+<div class="row">
+  <div class="col-md-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Monthly Average Arrival Delay</h5>
+        <iframe src="{{ url_for('static', filename='insights_plots/monthly_avg_delay.html') }}" width="100%" height="500" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Delay Minutes Allocated by Delay Type Across Effort Budgets</h5>
+        <iframe src="{{ url_for('static', filename='insights_plots/optimization_stack.html') }}" width="100%" height="500" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Average Delay Minutes by Type Within Each Regime</h5>
+        <iframe src="{{ url_for('static', filename='insights_plots/regime_bar.html') }}" width="100%" height="500" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

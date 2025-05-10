@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Optimization</h2>
+<form method="post" class="mb-4" id="optimizationForm">
+  <div class="mb-3">
+    <label for="effort_budget" class="form-label">Effort Budget</label>
+    <input type="number" class="form-control" id="effort_budget" name="effort_budget" min="1" required>
+    <div class="form-text">Enter your available effort budget (integer value).</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Optimize</button>
+</form>
+
+{% if warning %}
+  <div class="alert alert-warning">{{ warning }}</div>
+{% endif %}
+
+{% if result %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Optimization Results</h5>
+      <ul>
+        <li><strong>Total Delay Minutes Reduced:</strong> {{ result.total_delay_reduced }}</li>
+        <li><strong>Delay Reduction by Type:</strong>
+          <ul>
+            {% for delay_type, minutes in result.delay_by_type.items() %}
+              <li>{{ delay_type }}: {{ minutes }} minutes</li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}

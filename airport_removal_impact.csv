@@ -1,0 +1,8 @@
+Removed Airport,Components Before,Components After,Largest Component Size,Total Nodes,Connectivity Loss (%)
+ATL,1,1,29,30,3.33
+ORD,1,1,29,30,3.33
+LAX,1,1,29,30,3.33
+DFW,1,1,29,30,3.33
+DEN,1,1,29,30,3.33
+CLT,1,1,29,30,3.33
+PHX,1,1,29,30,3.33
