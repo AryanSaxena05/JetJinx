@@ -21,7 +21,15 @@ JetJinx is a data science and optimization project focused on analyzing flight d
    pip install -r requirements.txt
    ```
 
-3. Run the application:
+3. Download Required Data Files:
+   Due to GitHub's file size limitations, some large files are not included in the repository. You'll need to download them separately:
+   
+   - `models/flight_delay_model.joblib` (231 MB): [Download Model](https://drive.google.com/file/d/your-model-id/view)
+   - `flights.csv` (565 MB): [Download Dataset](https://drive.google.com/file/d/your-dataset-id/view)
+   
+   Place these files in their respective directories after downloading.
+
+4. Run the application:
    ```bash
    python app.py
    ```
