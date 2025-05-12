@@ -1,4 +1,4 @@
-# Python
+# Python artifacts
 __pycache__/
 *.py[cod]
 *$py.class
@@ -21,7 +21,7 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
+# Virtual environment
 venv/
 ENV/
 
@@ -31,19 +31,25 @@ ENV/
 *.swp
 *.swo
 
-# Large datasets
+# Large data files
 *.csv
 *.xlsx
 *.xls
 *.db
 *.sqlite3
+*.joblib
+*.pkl
+*.h5
+*.model
 
 # Model files
-models/*.pkl
 models/*.joblib
+models/*.pkl
+models/*.h5
 
 # Logs
 *.log
+logs/
 
 # Local development
 .env
@@ -57,4 +63,15 @@ models/*.joblib
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# Project specific
+flights.csv
+airports.csv
+airlines.csv
+airport_removal_impact.csv
+optimization_results.csv
+pagerank_drop_after_ATL_removal.csv
+models/flight_delay_model.joblib
+models/scaler.joblib
+models/label_encoders.joblib 
