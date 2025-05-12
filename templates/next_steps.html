@@ -1,10 +1,142 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2 class="mb-4">Next Steps</h2>
-<div class="card shadow-sm">
-  <div class="card-body">
-    <h5 class="card-title">Coming Soon</h5>
-    <p class="card-text">The project roadmap, downloadable resources, and contact information for collaboration will be available here.</p>
+<div class="alert alert-success mb-4">
+  <strong>See the roadmap for each module, download resources, and get in touch for collaboration.</strong>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <ul class="timeline">
+      <!-- Machine Learning Module -->
+      <li>
+        <div class="timeline-badge bg-primary"><i class="bi bi-cpu"></i></div>
+        <div class="timeline-panel card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Machine Learning Module</h5>
+            <div class="progress mb-2" style="height: 8px;">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#ml-next" aria-expanded="false" aria-controls="ml-next">
+              <i class="bi bi-chevron-down"></i> Show Details
+            </button>
+            <div class="collapse mt-2" id="ml-next">
+              <ul>
+                <li><strong>Data Enrichment:</strong> Integrate real‑time weather (METAR/TAF), air traffic control load, and terminal-level gate occupancy.</li>
+                <li><strong>Model Refinement:</strong> Experiment with temporal models (LSTM); apply ensemble stacking to combine tree‑based and neural approaches.</li>
+                <li><strong>Threshold Optimization:</strong> Calibrate decision thresholds to balance false positives/negatives, aligned to cost impact.</li>
+                <li><strong>Deployment & Monitoring:</strong> Containerize model as a REST API (Docker/Kubernetes); establish automated data pipelines and drift detection dashboards.</li>
+                <li><strong>Business Integration:</strong> Pilot with an airline's operations center: trigger proactive passenger notifications and dynamic crew scheduling.</li>
+              </ul>
+              <div class="mt-2">
+                <span class="badge bg-primary"><i class="bi bi-lightning-charge"></i> Fast & Efficient</span>
+                <span class="badge bg-info"><i class="bi bi-graph-up"></i> Data-Driven</span>
+                <span class="badge bg-success"><i class="bi bi-check-circle"></i> Proven Results</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- Optimization Module -->
+      <li>
+        <div class="timeline-badge bg-success"><i class="bi bi-graph-up-arrow"></i></div>
+        <div class="timeline-panel card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Optimization Module</h5>
+            <div class="progress mb-2" style="height: 8px;">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#opt-next" aria-expanded="false" aria-controls="opt-next">
+              <i class="bi bi-chevron-down"></i> Show Details
+            </button>
+            <div class="collapse mt-2" id="opt-next">
+              <ul>
+                <li><strong>Constraint Tuning:</strong> Refine LP/IP constraints using real-world cost and operational data.</li>
+                <li><strong>Scenario Analysis:</strong> Simulate interventions under varying budgets and delay regimes.</li>
+                <li><strong>Integration:</strong> Connect optimization outputs to airline scheduling and resource allocation systems.</li>
+                <li><strong>Visualization:</strong> Build interactive dashboards for scenario exploration and what-if analysis.</li>
+              </ul>
+              <div class="mt-2">
+                <span class="badge bg-success"><i class="bi bi-gear"></i> Optimized</span>
+                <span class="badge bg-warning"><i class="bi bi-lightbulb"></i> Innovative</span>
+                <span class="badge bg-danger"><i class="bi bi-graph-up-arrow"></i> High Impact</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- Graph Analysis Module -->
+      <li>
+        <div class="timeline-badge bg-warning"><i class="bi bi-diagram-3"></i></div>
+        <div class="timeline-panel card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Graph Analysis Module</h5>
+            <div class="progress mb-2" style="height: 8px;">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#graph-next" aria-expanded="false" aria-controls="graph-next">
+              <i class="bi bi-chevron-down"></i> Show Details
+            </button>
+            <div class="collapse mt-2" id="graph-next">
+              <ul>
+                <li><strong>Dynamic Networks:</strong> Analyze time-varying connectivity and resilience to disruptions.</li>
+                <li><strong>Community Detection:</strong> Identify airport clusters and regional subnetworks.</li>
+                <li><strong>Interactive Visuals:</strong> Deploy D3.js/Plotly-based network explorers for users.</li>
+                <li><strong>Collaboration:</strong> Partner with airport authorities for real-world validation and feedback.</li>
+              </ul>
+              <div class="mt-2">
+                <span class="badge bg-warning"><i class="bi bi-diagram-3"></i> Network Analysis</span>
+                <span class="badge bg-info"><i class="bi bi-globe"></i> Global Reach</span>
+                <span class="badge bg-secondary"><i class="bi bi-shield-check"></i> Resilient</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="text-center mt-4">
+      <a href="mailto:saxen117@purdue.edu" class="btn btn-lg btn-primary me-2"><i class="bi bi-envelope-fill"></i> Contact Us</a>
+      <a href="https://github.com/AryanSaxena05/JetJinx.git" class="btn btn-lg btn-outline-secondary"><i class="bi bi-github"></i> View on GitHub</a>
+    </div>
   </div>
 </div>
+<!-- Bootstrap Timeline CSS -->
+<style>
+.timeline {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #dee2e6;
+}
+.timeline > li {
+  position: relative;
+  min-height: 60px;
+  margin-bottom: 30px;
+}
+.timeline-badge {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  border-radius: 50%;
+  z-index: 100;
+}
+.timeline-panel {
+  margin-left: 70px;
+  position: relative;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 {% endblock %} 
