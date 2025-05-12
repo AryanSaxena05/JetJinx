@@ -1,48 +1,60 @@
-# JetJinx
+# Boiler Jet Jinx
 
-JetJinx is a data science and optimization project focused on analyzing flight delays and optimizing airline operations. It uses machine learning, optimization techniques, and graph analysis to provide actionable insights for improving flight reliability and efficiency.
+A Flask-based web application for flight delay prediction and optimization.
 
 ## Features
 
-- **Machine Learning Module:** Predicts flight delays using historical data and real-time features.
-- **Optimization Module:** Uses linear programming and dynamic programming to optimize resource allocation and reduce delays.
-- **Graph Analysis Module:** Analyzes airport networks to identify critical hubs and improve resilience.
+- Flight delay prediction using machine learning
+- Interactive data visualizations
+- Optimization recommendations
+- Modern, responsive UI
 
-## Installation
+## Setup
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/AryanSaxena05/JetJinx.git
-   cd JetJinx
-   ```
+```bash
+git clone https://github.com/AryanSaxena05/JetJinx.git
+cd JetJinx
+```
 
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-3. Download Required Data Files:
-   Due to GitHub's file size limitations, some large files are not included in the repository. You'll need to download them separately:
-   
-   - `models/flight_delay_model.joblib` (231 MB): [Download Model](https://drive.google.com/file/d/your-model-id/view)
-   - `flights.csv` (565 MB): [Download Dataset](https://drive.google.com/file/d/your-dataset-id/view)
-   
-   Place these files in their respective directories after downloading.
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 4. Run the application:
-   ```bash
-   python app.py
-   ```
+```bash
+python app.py
+```
 
-## Usage
+The application will be available at `http://localhost:5050`
 
-- **Methodology:** Learn about the data science and optimization techniques powering JetJinx.
-- **Next Steps:** See the roadmap, download resources, and get in touch for collaboration.
+## Project Structure
 
-## Contact
+```
+JetJinx/
+├── app.py              # Main Flask application
+├── requirements.txt    # Python dependencies
+├── static/            # Static files (CSS, JS)
+├── templates/         # HTML templates
+├── models/           # ML models and preprocessors
+└── utils/            # Utility functions
+```
 
-For any questions or collaboration opportunities, please contact [saxen117@purdue.edu](mailto:saxen117@purdue.edu).
+## Dependencies
+
+- Flask 2.0.1
+- pandas 1.3.3
+- numpy 1.21.2
+- scikit-learn 0.24.2
+- plotly 5.3.1
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+MIT License 
