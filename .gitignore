@@ -82,4 +82,10 @@ models/label_encoders.joblib
 *.png
 .venv/
 __pycache__/
-*.pyc 
+*.pyc
+
+# Large files
+*.joblib
+
+# Model files
+models/ 
