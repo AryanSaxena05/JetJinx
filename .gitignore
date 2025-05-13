@@ -74,4 +74,12 @@ optimization_results.csv
 pagerank_drop_after_ATL_removal.csv
 models/flight_delay_model.joblib
 models/scaler.joblib
-models/label_encoders.joblib 
+models/label_encoders.joblib
+
+# Large files and data
+*.ipynb
+*.pdf
+*.png
+.venv/
+__pycache__/
+*.pyc 

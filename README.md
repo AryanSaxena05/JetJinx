@@ -55,6 +55,22 @@ JetJinx/
 - scikit-learn 0.24.2
 - plotly 5.3.1
 
+## Large Files and Data
+
+Some large files are not included in this repository due to size limitations. You can download them from Google Drive:
+
+[Download Large Files from Google Drive](https://drive.google.com/drive/folders/1guk7lV7rDZ8indb9tNzlbUZrZBG2OW9m?usp=drive_link)
+
+The following files are available in the Google Drive folder:
+- `flights.csv` (565MB) - Main dataset for flight delays
+- `ProjectAirline.ipynb` (1.1MB) - Jupyter notebook with analysis
+- `flight_LP_Dynamic.ipynb` (1.1MB) - Jupyter notebook with optimization
+- `CFA FINAL PROJECT REPORT.pdf` (1.9MB) - Project report
+- `flight_yahuan.ipynb` (508KB) - Additional analysis notebook
+- Various PNG files for visualizations
+
+After downloading these files, place them in the root directory of the project to ensure all code works as expected.
+
 ## License
 
 MIT License 
