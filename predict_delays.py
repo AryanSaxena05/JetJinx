@@ -7,7 +7,55 @@ from sklearn.metrics import accuracy_score, classification_report
 import joblib
 import warnings
 import os
+import requests
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseDownload
+import io
 warnings.filterwarnings('ignore')
+
+# Google Drive API setup
+SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
+MODEL_FILE_ID = '1qkkJtVWtLZzZx3VA040V8oCz75lYQGij'  # Flight delay model file ID
+
+def download_model_from_drive():
+    """Download the model file from Google Drive"""
+    creds = None
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+
+    service = build('drive', 'v3', credentials=creds)
+    
+    # Create models directory if it doesn't exist
+    if not os.path.exists('models'):
+        os.makedirs('models')
+    
+    # Download the model file
+    request = service.files().get_media(fileId=MODEL_FILE_ID)
+    fh = io.BytesIO()
+    downloader = MediaIoBaseDownload(fh, request)
+    done = False
+    while done is False:
+        status, done = downloader.next_chunk()
+        print(f"Download {int(status.progress() * 100)}%")
+    
+    fh.seek(0)
+    with open('models/flight_delay_model.joblib', 'wb') as f:
+        f.write(fh.read())
+    
+    print("Model downloaded successfully!")
 
 def load_and_preprocess_data():
     """Load and preprocess the flight data"""
@@ -84,6 +132,11 @@ def train_model(X, y):
 
 def predict_delay(input_data):
     """Predict flight delay for new input"""
+    # Check if model exists, if not download it
+    if not os.path.exists('models/flight_delay_model.joblib'):
+        print("Model not found locally. Downloading from Google Drive...")
+        download_model_from_drive()
+    
     # Load the saved model and preprocessors
     model = joblib.load('models/flight_delay_model.joblib')
     label_encoders = joblib.load('models/label_encoders.joblib')
