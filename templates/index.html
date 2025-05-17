@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center my-5">
+    <h1 class="display-4">Welcome to Boiler Jet Jinx</h1>
+    <p class="lead">A modern platform for flight delay prediction and optimization, powered by data science.</p>
+</div>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Prediction</h5>
+                <p class="card-text">Predict flight delays using advanced machine learning models. Try it out with your own flight details!</p>
+                <a href="/predict" class="btn btn-primary">Try Prediction</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Insights</h5>
+                <p class="card-text">Explore key insights and visualizations from the flight dataset to understand delay patterns and trends.</p>
+                <a href="/insights" class="btn btn-primary">View Insights</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Optimization</h5>
+                <p class="card-text">Run optimization models to minimize delays and improve scheduling efficiency.</p>
+                <a href="/optimization" class="btn btn-primary">Optimize Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row g-4 mt-2">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Methodology</h5>
+                <p class="card-text">Learn about the data science and optimization techniques powering Boiler Jet Jinx.</p>
+                <a href="/methodology" class="btn btn-outline-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Next Steps</h5>
+                <p class="card-text">See the roadmap, download resources, and get in touch for collaboration.</p>
+                <a href="/next-steps" class="btn btn-outline-primary">Next Steps</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
