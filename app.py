@@ -5,6 +5,11 @@ import joblib
 from insights_utils import get_monthly_avg_delay
 from optimization_utils import get_optimization_result
 
+import os
+if os.environ.get("GOOGLE_CREDENTIALS_JSON"):
+    with open("credentials.json", "w") as f:
+        f.write(os.environ["GOOGLE_CREDENTIALS_JSON"])
+        
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
