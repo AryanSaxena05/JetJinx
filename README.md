@@ -66,9 +66,6 @@ Some large files are not included in this repository due to size limitations. Yo
 The following files are available in the Google Drive folder:
 - `flights.csv` (565MB) - Main dataset for flight delays
 - `ProjectAirline.ipynb` (1.1MB) - Jupyter notebook with analysis
-- `flight_LP_Dynamic.ipynb` (1.1MB) - Jupyter notebook with optimization
-- `CFA FINAL PROJECT REPORT.pdf` (1.9MB) - Project report
-- `flight_yahuan.ipynb` (508KB) - Additional analysis notebook
 - Various PNG files for visualizations
 
 After downloading these files, place them in the root directory of the project to ensure all code works as expected.
